@@ -157,10 +157,10 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
+                               :size 32
                                :weight normal
                                :width normal
-                               :powerline-scale 0.85)
+                               :powerline-scale 1.00)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -529,6 +529,9 @@ static char *gnus-pointer[] = {
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#488249" "#95d291" "#57a2a4" "#93E0E3" "#DC8CC3" "#bbb0cb")))
  '(olivetti-body-width 0.75)
  '(olivetti-mode-hook nil)
+ '(org-agenda-files
+   (quote
+    ("/home/chris/org/2020-05-01.org" "/home/chris/org/2020-05-02.org" "/home/chris/org/20200501140836-april_2020.org" "/home/chris/org/20200501160749-newsletters.org" "/home/chris/org/20200503065300-2020_05_03.org" "/home/chris/org/20200503065920-sinful.org" "/home/chris/org/20200504053204-2020_05_04.org" "/home/chris/org/20200504171942-homework_for_life.org" "/home/chris/org/20200505061606-2020_05_05.org" "/home/chris/org/20200506063547-god_s_wrath.org" "/home/chris/org/20200506065200-celebration_before_god.org" "/home/chris/org/20200506070605-solomon.org" "/home/chris/org/20200506072644-2020_05_06.org" "/home/chris/org/inbox.org" "/home/chris/org/notes.org")))
  '(org-export-backends (quote (ascii beamer html icalendar latex md odt)))
  '(org-hide-emphasis-markers t)
  '(org-mode-hook
@@ -607,7 +610,7 @@ static char *gnus-pointer[] = {
      #[0 "\300\301\302\303\304$\207"
          [add-hook change-major-mode-hook org-babel-show-result-all append local]
          5]
-     org-babel-result-hide-spec org-babel-hide-all-hashes flyspell-mode spacemacs/org-setup-evil-surround spacemacs/load-yasnippet toc-org-enable org-sticky-header-mode org-download-enable org-bullets-mode dotspacemacs//prettify-spacemacs-docs spacemacs//org-babel-do-load-languages spacemacs//evil-org-mode org-eldoc-load spacemacs//init-company-org-mode company-mode olivetti-mode)))
+     org-babel-result-hide-spec org-babel-hide-all-hashes flyspell-mode spacemacs/org-setup-evil-surround spacemacs/load-yasnippet toc-org-enable org-sticky-header-mode org-download-enable org-bullets-mode dotspacemacs//prettify-spacemacs-docs spacemacs//org-babel-do-load-languages spacemacs//evil-org-mode org-eldoc-load spacemacs//init-company-org-mode company-mode olivetti-mode visual-line-mode)))
  '(org-modules
    (quote
     (ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus ol-info ol-irc ol-mhe org-mouse ol-rmail ol-w3m)))
