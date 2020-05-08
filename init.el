@@ -157,7 +157,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 32
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.00)
@@ -345,7 +345,17 @@ you should place your code here."
 
   ;; Setting TODO keywords to a larger amount of states so that I can more easily organize tasks.
   (setq org-todo-keywords
-        '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
+        '((sequence "TODO(t!)"
+                    ;"NEXT(n!)"
+                    "DOINGNOW(n!)"
+                    ;"BLOCKED(b!)"
+                    ;"TODELEGATE(g!)"
+                    ;"DELEGATED(D!)"
+                    ;"FOLLOWUP(f!)"
+                    ;"TICKLE(T!)"
+                    "|"
+                    "CANCELLED(c!)"
+                    "DONE(d!)")))
 
   ;; Set Org Mode settings for Bible Searching and TODOS to be faster and more easy ya know...
   (spacemacs/declare-prefix "o" "own-menu")
