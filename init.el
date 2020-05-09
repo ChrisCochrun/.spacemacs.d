@@ -160,7 +160,7 @@ values."
                                :size 32
                                :weight normal
                                :width normal
-                               :powerline-scale 1.00)
+                               :powerline-scale 1.20)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -532,8 +532,11 @@ static char *gnus-pointer[] = {
  '(org-agenda-files
    (quote
     ("/home/chris/org/2020-05-01.org" "/home/chris/org/2020-05-02.org" "/home/chris/org/20200501140836-april_2020.org" "/home/chris/org/20200501160749-newsletters.org" "/home/chris/org/20200503065300-2020_05_03.org" "/home/chris/org/20200503065920-sinful.org" "/home/chris/org/20200504053204-2020_05_04.org" "/home/chris/org/20200504171942-homework_for_life.org" "/home/chris/org/20200505061606-2020_05_05.org" "/home/chris/org/20200506063547-god_s_wrath.org" "/home/chris/org/20200506065200-celebration_before_god.org" "/home/chris/org/20200506070605-solomon.org" "/home/chris/org/20200506072644-2020_05_06.org" "/home/chris/org/inbox.org" "/home/chris/org/notes.org")))
+ '(org-custom-properties (quote ("verseref")))
  '(org-export-backends (quote (ascii beamer html icalendar latex md odt)))
  '(org-hide-emphasis-markers t)
+ '(org-id-link-to-org-use-id (quote create-if-interactive-and-no-custom-id))
+ '(org-link-keep-stored-after-insertion t)
  '(org-mode-hook
    (quote
     (#[0 "\305\306	>\203 \307
@@ -628,7 +631,7 @@ static char *gnus-pointer[] = {
  '(pos-tip-foreground-color "#FFFFEF")
  '(powerline-color1 "#1E1E1E")
  '(powerline-color2 "#111111")
- '(powerline-default-separator (quote arrow-fade))
+ '(powerline-default-separator (quote arrow))
  '(powerline-height 20)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#7F9F7F" "#4F4F4F" 0.2))
  '(tabbar-background-color "#353335333533")
