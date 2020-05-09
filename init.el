@@ -364,6 +364,18 @@ you should place your code here."
 
   ;; Set org agenda folder to all org files in nextcloud/notes
   (setq org-agenda-files '("~/org/"))
+
+  ;; Make org properties invisible with command
+  (defun org-toggle-properties ()
+    ;; toggle visibility of properties in current header if it exists
+    (save-excursion
+      (when (not (org-at-heading-p))
+        (org-previous-visible-heading 1))
+      (when (org-header-property-p)
+        (let* ((a (re-search-forward "\n\\:" nil t)))
+          (if (outline-invisible-p (point))
+              (outline-show-entry)
+            (org-cycle-hide-drawers 'all))))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
