@@ -1,0 +1,10 @@
+#+TITLE: README
+
+* My Personal Spacemacs configs
+These are designed mostly for my work as programming, IT, and Biblical Studies. Spacemacs allows for such and incredibly flexible editor and tool that honestly it works great for all of these purposes. I love that it can be used for serious programming and IT work as well as an incredible writing and note taking tool. Some of what is in here may or may not work in your environment, so please keep that in mind if you wish to use this yourself.
+
+** A note on computers
+I'm using this github repository to store these configs and sync them across my machines. One of those machines has a much higher DPI than the other and so I'm working to detect which machine I'm on and allow that to determine certain settings. If this causes problems for you, I'm sorry and I will try to label those specific settings.
+
+** A note on Biblical Studies
+Since I am also going to be using this to study the Bible and take copious notes on it, there may be settings for Org-Mode and others that mostly only make sense for that, I will hopefully comment things to label them for such if that is of no use for you.
