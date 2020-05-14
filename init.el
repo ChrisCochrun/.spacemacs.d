@@ -52,6 +52,7 @@ values."
      major-modes
      rust
      yaml
+     multiple-cursors
      (shell :variables
             shell-default-height 50
             shell-default-position 'bottom)
@@ -60,6 +61,7 @@ values."
      themes-megapack
      version-control
      org-roam
+     org-bible
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -71,6 +73,8 @@ values."
      doom-themes
      olivetti
      org-super-agenda
+     base16-theme
+     snazzy-theme
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -145,6 +149,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(doom-snazzy
+                         snazzy
                          dakrone
                          darkokai
                          farmhouse-dark
@@ -347,7 +352,7 @@ you should place your code here."
   (setq org-todo-keywords
         '((sequence "TODO(t!)"
                     ;"NEXT(n!)"
-                    "DOINGNOW(n!)"
+                    ;"DOINGNOW(n!)"
                     ;"BLOCKED(b!)"
                     ;"TODELEGATE(g!)"
                     ;"DELEGATED(D!)"
@@ -365,44 +370,13 @@ you should place your code here."
   ;; Set org agenda folder to all org files in nextcloud/notes
   (setq org-agenda-files '("~/org/"))
 
-  ;; Make org properties invisible with command
-  (defun org-cycle-hide-drawers (state)
-    ;; toggle visibility of properties in current header if it exists
-  "Re-hide all drawers after a visibility state change."
-  (when (and (derived-mode-p 'org-mode)
-             (not (memq state '(overview folded contents))))
-    (save-excursion
-      (let* ((globalp (memq state '(contents all)))
-             (beg (if globalp
-                    (point-min)
-                    (point)))
-             (end (if globalp
-                    (point-max)
-                    (if (eq state 'children)
-                      (save-excursion
-                        (outline-next-heading)
-                        (point))
-                      (org-end-of-subtree t)))))
-        (goto-char beg)
-        (while (re-search-forward org-drawer-regexp end t)
-          (save-excursion
-            (beginning-of-line 1)
-            (when (looking-at org-drawer-regexp)
-              (let* ((start (1- (match-beginning 0)))
-                     (limit
-                       (save-excursion
-                         (outline-next-heading)
-                           (point)))
-                     (msg (format
-                            (concat
-                              "org-cycle-hide-drawers:  "
-                              "`:END:`"
-                              " line missing at position %s")
-                            (1+ start))))
-                (if (re-search-forward "^[ \t]*:END:" limit t)
-                  (outline-flag-region start (point-at-eol) t)
-                  (user-error msg))))))))))
+  (add-to-list 'load-path "~/.emacs.d/private/org-bible/")
 
+  ;; (load "~/.emacs.d/private/local/org-cycle-hide-drawers.el")
+  (autoload 'org-cycle-hide-drawers "~/.emacs.d/private/org-bible/org-cycle-hide-drawers.el")
+  (require 'org-cycle-hide-drawers)
+
+  ;; Set org cycle properties to my own toggles.
   (spacemacs/set-leader-keys "tP" 'org-cycle-hide-drawers)
   )
 
