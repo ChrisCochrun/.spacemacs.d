@@ -62,6 +62,12 @@ values."
      version-control
      org-roam
      org-bible
+     (exwm
+      :variables
+      exwm-enable-systray t
+      exwm-autostart-xdg-applications t
+      exwm-install-logind-lock-handler t
+      exwm-terminal-command "alacritty")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -75,6 +81,7 @@ values."
      org-super-agenda
      base16-theme
      snazzy-theme
+     theme-magic
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -378,6 +385,11 @@ you should place your code here."
 
   ;; Set org cycle properties to my own toggles.
   (spacemacs/set-leader-keys "tP" 'org-cycle-hide-drawers)
+
+  ;; (require 'exwm)
+  ;; (require 'exwm-config)
+  ;; (exwm-config-default)
+  ;; (exwm-use-autorandr)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
