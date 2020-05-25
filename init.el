@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(lua
+     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -60,14 +61,16 @@ values."
      syntax-checking
      themes-megapack
      version-control
+     mu4e
+     templates
+     helpful
      org-roam
-     org-bible
-     (exwm
-      :variables
-      exwm-enable-systray t
-      exwm-autostart-xdg-applications t
-      exwm-install-logind-lock-handler t
-      exwm-terminal-command "alacritty")
+     (exwm :variables
+           exwm-enable-systray t
+           exwm-autostart-xdg-applications t
+           exwm-terminal-command "alacritty"
+           exwm-install-logind-lock-handler t
+           exwm-use-autorandr t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -168,7 +171,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Rec Mono Linear"
                                :size 12.0
                                :weight normal
                                :width normal
@@ -244,7 +247,7 @@ values."
    dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.1
+   dotspacemacs-which-key-delay 0.2
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
@@ -267,7 +270,7 @@ values."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 80
+   dotspacemacs-active-transparency 70
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -386,10 +389,6 @@ you should place your code here."
   ;; Set org cycle properties to my own toggles.
   (spacemacs/set-leader-keys "tP" 'org-cycle-hide-drawers)
 
-  ;; (require 'exwm)
-  ;; (require 'exwm-config)
-  ;; (exwm-config-default)
-  ;; (exwm-use-autorandr)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -466,6 +465,8 @@ static char *note[] = {
  '(evil-normal-state-cursor (quote ("#FFEE58" box)) t)
  '(evil-visual-state-cursor (quote ("#C5E1A5" box)) t)
  '(evil-want-Y-yank-to-eol nil)
+ '(exwm-randr-workspace-monitor-plist (quote (1 "DVI-D" 2 "HDMI")))
+ '(exwm-systemtray-height 20)
  '(fci-rule-character-color "#202020")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(flymake-error-bitmap
@@ -567,7 +568,7 @@ static char *gnus-pointer[] = {
  '(olivetti-mode-hook nil)
  '(org-agenda-files
    (quote
-    ("/home/chris/org/2020-05-01.org" "/home/chris/org/2020-05-02.org" "/home/chris/org/20200501140836-april_2020.org" "/home/chris/org/20200501160749-newsletters.org" "/home/chris/org/20200503065300-2020_05_03.org" "/home/chris/org/20200503065920-sinful.org" "/home/chris/org/20200504053204-2020_05_04.org" "/home/chris/org/20200504171942-homework_for_life.org" "/home/chris/org/20200505061606-2020_05_05.org" "/home/chris/org/20200506063547-god_s_wrath.org" "/home/chris/org/20200506065200-celebration_before_god.org" "/home/chris/org/20200506070605-solomon.org" "/home/chris/org/20200506072644-2020_05_06.org" "/home/chris/org/inbox.org" "/home/chris/org/notes.org")))
+    ("/home/chris/org/inbox.org" "/home/chris/org/notes.org")))
  '(org-custom-properties (quote ("verseref")))
  '(org-export-backends (quote (ascii beamer html icalendar latex md odt)))
  '(org-hide-emphasis-markers t)
